@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "scripts": {
+    "bower": "bower install",
+    "fix": "fixjsstyle --strict --nojsdoc ./lib/cookie.js",
+    "lint": "gjslint --strict --nojsdoc ./lib/cookie.js",
+    "mini": "uglifyjs ./lib/cookie.js --comments -cm -d 'Mocha=void 0' -r cookie -o ./cookie.min.js",
+    "postinstall": "npm run-script bower",
+    "test": "testem ci",
+    "testem": "testem ci --launch Firefox,PhantomJS"
+  },
+  "devDependencies": {
+    "bower": "~1.2",
+    "testem": "~0.6",
+    "uglify-js": "~2.4"
+  }
+}
