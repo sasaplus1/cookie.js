@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../bower_components/mocha/mocha.css">
+<title>cookie.js</title>
+<div id="mocha"></div>
+<script src="../bower_components/expect/expect.js"></script>
+<script src="../bower_components/mocha/mocha.js"></script>
+<script src="/testem.js"></script>
+<script>
+  mocha.setup({
+    globals: 'mock',
+    ui: 'bdd'
+  });
+</script>
+<script src="../lib/cookie.js"></script>
+<script src="./test-cookie.js"></script>
+<script>
+  mocha.checkLeaks();
+  mocha.run();
+</script>
