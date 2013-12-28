@@ -7,7 +7,7 @@
     "mini": "uglifyjs ./lib/cookie.js --comments -cm -d 'Mocha=void 0' -r cookie -o ./cookie.min.js",
     "postinstall": "npm run-script bower",
     "test": "testem ci",
-    "testem": "testem ci --launch Firefox,PhantomJS"
+    "travis": "testem ci --launch Firefox,PhantomJS"
   },
   "devDependencies": {
     "bower": "~1.2",
