@@ -1,0 +1,14 @@
+{
+  "name": "cookie.js",
+  "version": "0.0.0",
+  "main": "cookie.min.js",
+  "ignore": [
+    "**/.*",
+    "bower_components",
+    "node_modules"
+  ],
+  "devDependencies": {
+    "expect": "~0.2",
+    "mocha": "~1.16"
+  }
+}
