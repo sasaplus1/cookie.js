@@ -24,7 +24,7 @@ describe('cookie', function() {
     });
 
     afterEach(function() {
-      window.mock = null;
+      delete window.mock;
     });
 
     it('should get any values if not set name', function() {
@@ -85,7 +85,7 @@ describe('cookie', function() {
     });
 
     afterEach(function() {
-      window.mock = null;
+      delete window.mock;
     });
 
     it('should not get value if name has unexpected character', function() {
@@ -113,7 +113,7 @@ describe('cookie', function() {
     });
 
     afterEach(function() {
-      window.mock = null;
+      delete window.mock;
     });
 
     it('should set some values if parameter is array', function() {
