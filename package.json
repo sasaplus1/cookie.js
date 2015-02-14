@@ -6,6 +6,7 @@
     "fix": "fixjsstyle --flagfile .closurelinter -r .",
     "lint": "gjslint --flagfile .closurelinter -r .",
     "postinstall": "npm run bower",
+    "powerify": "espower ./test/test.js > ./test/test.pwr.js",
     "test": "testem",
     "testem": "testem ci",
     "travis": "testem ci --launch Firefox,PhantomJS"
