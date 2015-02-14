@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "clean": "rm cookie.js index.html test.js test.pwr.js",
+    "cleanup": "rm test.js",
+    "get": "npm run get-cookie && npm run get-index && npm run get-test",
+    "get-cookie": "git show master:cookie.js > cookie.js",
+    "get-index": "git show master:test/index.html > index.html",
+    "get-test": "git show master:test/test.js > test.js",
+    "power": "espower test.js > test.pwr.js",
+    "sed": "npm run sed-link && npm run sed-script && npm run sed-testem",
+    "sed-link": "sed -i '' -e 's|href=\".\\{1,2\\}.*/\\(.*\\)\"|href=\"\\1\"|' index.html",
+    "sed-script": "sed -i '' -e 's|src=\".\\{1,2\\}.*/\\(.*\\)\"|src=\"\\1\"|' index.html",
+    "sed-testem": "sed -i '' -e '/testem.js/d' index.html",
+    "start": "npm run get && npm run sed && npm run power && npm run cleanup"
+  },
+  "devDependencies": {
+    "espower-cli": "^0.2.0"
+  }
+}
