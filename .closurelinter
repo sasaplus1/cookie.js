@@ -1,0 +1,4 @@
+--strict
+--nojsdoc
+-e node_modules,bower_components
+-x cookie.min.js,test.pwr.js

@@ -17,28 +17,42 @@ $ bower install cookie.js
 <script src="cookie.min.js"></script>
 ```
 
-```js
-// was set value to Cookie:
-// "name1=value1; name2=value2; name3=value3; iroha=%E3%81%84%E3%82%8D%E3%81%AF";
+## Example
 
-cookie.get('name1');
-// => "value1"
+```js
+// document.cookie
+// => "name=value; iroha=%E3%81%84%E3%82%8D%E3%81%AF"
+
+cookie.get('name');
+// => "value"
 
 cookie.get();
 // => {
-//   name1: "value1",
-//   name2: "value2",
-//   name3: "value3",
+//   name: "value",
 //   iroha: "いろは"
 // }
 
-// set cookie-pair
+cookie.config.raw = true;
+cookie.get();
+// => {
+//   name: "value",
+//   iroha: "%E3%81%84%E3%82%8D%E3%81%AF"
+// }
+```
+
+```js
 cookie.set('sushi', '寿司');
 // append "sushi=%E5%AF%BF%E5%8F%B8" to Cookie
 
-// set cookie-pair and attributes
-cookie.set('name4', 'value4', {
-  expires: 'Wed, 25 Dec 2013 15:24:47 GMT',
+cookie.config.raw = true;
+cookie.set('sushi', '寿司');
+// append "sushi=寿司" to Cookie
+```
+
+```js
+// set cookie-pair with attributes
+cookie.set('cookie-name1', 'cookie-value1', {
+  expires: 'Fri, 13 Feb 2015 15:00:00 GMT',
   maxage: 60,
   domain: 'github.com',
   path: '/',
@@ -47,52 +61,85 @@ cookie.set('name4', 'value4', {
 
 // multiple set
 cookie.set([
-  {name: 'name5', value: 'value5', secure: true},
-  {name: 'name6', value: 'value6', path: '/'}
+  {
+    name: 'cookie-name2',
+    value: 'cookie-value2',
+    secure: true
+  },
+  {
+    name: 'cookie-name3',
+    value: 'cookie-value3',
+    path: '/'
+  }
 ]);
 
-// set with method chain
+// method chain
 cookie
-  .set('name7', 'value7')
-  .set('name8', 'value8');
+  .set('cookie-name4', 'cookie-value4')
+  .set('cookie-name5', 'cookie-value5');
 ```
+
+## Variables
+
+### cookie.config.raw
+
+raw mode flag. use encodeURIComponent/decodeURIComponent when `raw` is false.
+
+default is false.
 
 ## Functions
 
 ### get([name])
 
-- `name` String|undefined - cookie-name
-- `return` String|null|Object - cookie-value or cookie-pairs
+- `name`
+  - `String` - cookie-name
+- `return`
+  - `String|Object|Null` - cookie-value or cookie-pairs
 
-get cookie-value of cookie-name. cookie-value is decode with decodeURIComponent.
+get cookie-value or cookie-pairs.
 
-return cookie-pairs object if name is undefined.
-return null if cookie-name is not found.
+return null when cookie-name is not found.
 
-### set(name[, value, options])
+### set(name, value[, options])
 
-- `name` String|Object[] - cookie-name
-- `value` String|undefined - cookie-value
-- `options` Object|undefined - attributes object
-- `return` Object - own instance
+- `name`
+  - `String` - cookie-name
+- `value`
+  - `String` - cookie-value
+- `options` (optional)
+  - `Object` - attributes
+- `return`
+  - `Object` - own instance
 
-set cookie-pair to Cookie. cookie-value is encode with encodeURIComponent.
+set cookie-pair to Cookie.
 
-can multiple set if name is an Array of Object.
+can set below to `options`:
 
-can set to options below:
+- `expires`
+  - `String`
+- `maxage`
+  - `Number`
+- `domain`
+  - `String`
+- `path`
+  - `String`
+- `secure`
+  - `Boolean`
 
-- expires
-- maxage
-- domain
-- path
-- secure
+### set(cookiePairs)
+
+- `cookiePairs`
+  - `Object[]` - cookie-pairs
+- `return`
+  - `Object` - own instance
+
+set cookie-pairs to Cookie.
 
 ## Test
 
 ```sh
 $ npm install
-$ npm test
+$ npm run testem
 ```
 
 ## License

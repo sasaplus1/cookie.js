@@ -1,6 +1,6 @@
 {
   "name": "cookie.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "cookie.min.js",
   "ignore": [
     "**/.*",
@@ -8,7 +8,7 @@
     "node_modules"
   ],
   "devDependencies": {
-    "expect": "~0.2",
-    "mocha": "~1.16"
+    "power-assert": "~0.10",
+    "mocha": "~2.1"
   }
 }
