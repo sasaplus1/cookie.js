@@ -2,9 +2,9 @@
   "private": true,
   "scripts": {
     "bower": "bower install",
-    "mini": "uglifyjs ./lib/cookie.js --comments -cm -d 'Mocha=void 0' -r cookie -o ./cookie.min.js",
     "fix": "fixjsstyle --flagfile .closurelinter -r .",
     "lint": "gjslint --flagfile .closurelinter -r .",
+    "minify": "uglifyjs ./cookie.js --comments -cm -d 'Mocha=void 0' -r cookie -o ./cookie.min.js",
     "postinstall": "npm run bower",
     "powerify": "espower ./test/test.js > ./test/test.pwr.js",
     "test": "testem",
