@@ -17,6 +17,10 @@ $ bower install cookie.js
 <script src="cookie.min.js"></script>
 ```
 
+define `cookie` by `define()` if using AMD loader.
+
+otherwise `cookie` export to global.
+
 ## Example
 
 ```js
