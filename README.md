@@ -1,7 +1,7 @@
 # cookie.js
 
-[![Build Status](https://travis-ci.org/sasaplus1/cookie.js.png)](https://travis-ci.org/sasaplus1/cookie.js)
-[![Dependency Status](https://gemnasium.com/sasaplus1/cookie.js.png)](https://gemnasium.com/sasaplus1/cookie.js)
+[![Build Status](https://travis-ci.org/sasaplus1/cookie.js.svg)](https://travis-ci.org/sasaplus1/cookie.js)
+[![Dependency Status](https://gemnasium.com/sasaplus1/cookie.js.svg)](https://gemnasium.com/sasaplus1/cookie.js)
 [![Bower version](https://badge.fury.io/bo/cookie.js.svg)](http://badge.fury.io/bo/cookie.js)
 
 library for Cookie
